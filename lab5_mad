@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     myDB.insert_record(et1.getText().toString(),Integer.parseInt(et2.getText().toString()));
                     public void insert_record(String name,int marks)
                     {
-                        String query="INSERT INTO student_table(Name,Marks)VALUES("+name+"
+                        String query="INSERT INTO student_table(Name,Marks)VALUES("+name+","+marks+");";
+                        String query="INSERT INTO student_table VALUES(null,"+name+","+marks+");";
+                        db.execSQL(query);
+                        
                     }
                 }
             }
